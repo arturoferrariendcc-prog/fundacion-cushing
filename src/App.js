@@ -1,4 +1,4 @@
-﻿// =============================================
+// =============================================
 // 🚀 PRO MAX FINAL: HEADER + STATS + INTERACTIVO
 // =============================================
 
@@ -136,7 +136,7 @@ export default function CushingFoundation() {
                 e.currentTarget.style.border = "1px solid #1e293b";
               }}
             >
-              <img src={dog.img} style={{ width: "100%", height: 160, objectFit: "cover" }} />
+              <img src={dog.img} alt={dog.name} style={{ width: "100%", height: 160, objectFit: "cover" }} />
               <div style={{ padding: 15 }}>
                 <h4>{dog.name}</h4>
                 <p style={{ color: "#94a3b8" }}>{dog.status}</p>
