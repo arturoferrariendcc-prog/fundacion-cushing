@@ -23,36 +23,7 @@ const dogsData = [
     story: "Rocky está listo para una nueva familia tras superar su enfermedad."
   },
 ];
-const Particulas = () => {
-  return (
-    <div style={{
-      position: "fixed",
-      top: 0,
-      left: 0,
-      width: "100%",
-      height: "100%",
-      overflow: "hidden",
-      zIndex: 0,
-      pointerEvents: "none"
-    }}>
-      {[...Array(20)].map((_, i) => (
-        <div
-          key={i}
-          style={{
-            position: "absolute",
-            width: Math.random() * 6 + 4,
-            height: Math.random() * 6 + 4,
-            background: "rgba(59,130,246,0.3)",
-            borderRadius: "50%",
-            top: Math.random() * 100 + "%",
-            left: Math.random() * 100 + "%",
-            animation: `float ${5 + Math.random() * 10}s linear infinite`
-          }}
-        />
-      ))}
-    </div>
-  );
-};
+
 
 export default function CushingFoundation() {
   const [donations, setDonations] = useState(12500);
