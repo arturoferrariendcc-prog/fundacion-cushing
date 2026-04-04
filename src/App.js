@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Heart, PawPrint } from "lucide-react";
-import confetti from "canvas-confetti";
+
 
 const dogsData = [
   {
@@ -56,11 +56,7 @@ export default function CushingFoundation() {
     setDisplayDonations(current);
   }, 20);
 };
-const lanzarConfetti = () => {
-  confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
-  confetti({ particleCount: 50, angle: 60, spread: 55 });
-  confetti({ particleCount: 50, angle: 120, spread: 55 });
-};
+
 const mostrarMensaje = (amount) => {
   setMensaje(`Gracias ${nombre || "amigo"} por donar $${amount} 🐶💙`);
 
@@ -389,7 +385,7 @@ const mostrarMensaje = (amount) => {
         const newTotal = donations + amount;
         setDonations(newTotal);
         animateDonations(newTotal);
-        lanzarConfetti(); //aquí se lanza el confetti
+       
         mostrarMensaje(amount);
         sonido.play();
         window.open("https://www.paypal.com/donate");
@@ -442,7 +438,6 @@ const mostrarMensaje = (amount) => {
      const newTotal = donations + amount;
 setDonations(newTotal);
 animateDonations(newTotal);
-lanzarConfetti();
 mostrarMensaje(amount);
 sonido.play();
 
