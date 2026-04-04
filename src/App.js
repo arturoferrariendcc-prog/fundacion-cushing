@@ -1,7 +1,3 @@
-// =============================================
-// 🚀 PRO MAX FINAL: HEADER + STATS + INTERACTIVO
-// =============================================
-
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Heart, PawPrint } from "lucide-react";
