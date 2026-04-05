@@ -30,6 +30,15 @@ export default function CushingFoundation() {
   const [displayDonations, setDisplayDonations] = useState(12500);
   const [selectedDog, setSelectedDog] = useState(null);
   const [donationOpen, setDonationOpen] = useState(false);
+
+  useEffect(() => {
+    if (donationOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [donationOpen]);
+
   const [customAmount, setCustomAmount] = useState("");
   const [mensaje, setMensaje] = useState("");
   const [nombre, setNombre] = useState("");
@@ -254,43 +263,39 @@ const mostrarMensaje = (amount) => {
 
       {/* Modal */}
       <AnimatePresence>
-        {selectedDog && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            style={{
-    position: "fixed",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    background: "rgba(0,0,0,0.8)",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    zIndex: 9999 
-  }}
->
-            <motion.div
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.8 }}
-              style={{
-                background: "#020617",
-                padding: 30,
-                borderRadius: 20,
-                maxWidth: 400,
-                textAlign: "center",
-                border: "1px solid #3b82f6"
-              }}
-            >
-              <h2 style={{ color: "#3b82f6" }}>{selectedDog.name}</h2>
-              <p>{selectedDog.story}</p>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+  {selectedDog && (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        background: "rgba(0,0,0,0.8)",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        zIndex: 99999
+      }}
+    >
+      <motion.div
+        initial={{ scale: 0.8 }}
+        animate={{ scale: 1 }}
+        exit={{ scale: 0.8 }}
+        style={{
+          background: "#020617",
+          padding: 30,
+          borderRadius: 20
+        }}
+      >
+        {/* contenido */}
+      </motion.div>
+    </motion.div>
+  )}
+</AnimatePresence>
 
       {/* Donation */}
      
@@ -325,17 +330,18 @@ const mostrarMensaje = (amount) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-        background: "rgba(0,0,0,0.8)",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center"
-      }}
+     style={{
+  position: "fixed",
+  top: 0,
+  left: 0,
+  width: "100%",
+  height: "100%",
+  background: "rgba(0,0,0,0.8)",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  zIndex: 99999 // 
+}}
       onClick={() => setDonationOpen(false)}
     >
       <motion.div
