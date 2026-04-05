@@ -262,6 +262,21 @@ const mostrarMensaje = (amount) => {
   
 
       {/* Modal */}
+
+      <button
+  onClick={() => setDonationOpen(true)}
+  style={{
+    marginTop: 15,
+    padding: "10px 20px",
+    borderRadius: 10,
+    border: "none",
+    background: "#3b82f6",
+    color: "white",
+    cursor: "pointer"
+  }}
+>
+  💙 Ayudar a {selectedDog.name}
+</button>
       <AnimatePresence>
   {selectedDog && (
     <motion.div
@@ -281,18 +296,56 @@ const mostrarMensaje = (amount) => {
         zIndex: 99999
       }}
     >
-      <motion.div
-        initial={{ scale: 0.8 }}
-        animate={{ scale: 1 }}
-        exit={{ scale: 0.8 }}
-        style={{
-          background: "#020617",
-          padding: 30,
-          borderRadius: 20
-        }}
-      >
-        {/* contenido */}
-      </motion.div>
+     <motion.div
+  initial={{ scale: 0.8 }}
+  animate={{ scale: 1 }}
+  exit={{ scale: 0.8 }}
+  onClick={(e) => e.stopPropagation()}
+  style={{
+    background: "#020617",
+    padding: 30,
+    borderRadius: 20,
+    maxWidth: 400,
+    width: "90%",
+    textAlign: "center",
+    border: "1px solid #3b82f6"
+  }}
+>
+  <img
+    src={selectedDog.img}
+    alt={selectedDog.name}
+    style={{
+      width: "100%",
+      borderRadius: 12,
+      marginBottom: 15
+    }}
+  />
+
+  <h2 style={{ color: "#3b82f6", marginBottom: 10 }}>
+    {selectedDog.name}
+  </h2>
+
+  <p style={{ color: "#94a3b8", marginBottom: 10 }}>
+    {selectedDog.status}
+  </p>
+
+  <p style={{ color: "white", lineHeight: 1.6 }}>
+    {selectedDog.story}
+  </p>
+
+  <button
+    onClick={() => setSelectedDog(null)}
+    style={{
+      marginTop: 20,
+      background: "transparent",
+      border: "none",
+      color: "#94a3b8",
+      cursor: "pointer"
+    }}
+  >
+    Cerrar
+  </button>
+</motion.div>
     </motion.div>
   )}
 </AnimatePresence>
