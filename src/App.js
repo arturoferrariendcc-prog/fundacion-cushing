@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Heart, PawPrint } from "lucide-react";
+import { Analytics } from '@vercel/analytics/react';
 
 
 const dogsData = [
@@ -794,8 +795,7 @@ whileHover={{ scale: 1.01 }}
         <p>© {new Date().getFullYear()} Fundación Cushing Canino</p>
       </footer>
 
+      <Analytics />
     </div>
   );
 }
-
-
