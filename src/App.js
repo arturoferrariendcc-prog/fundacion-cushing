@@ -45,6 +45,7 @@ export default function CushingFoundation() {
   let current = displayDonations;
   const increment = Math.ceil((newAmount - current) / 20);
 
+
   const interval = setInterval(() => {
     current += increment;
 
@@ -388,7 +389,11 @@ const mostrarMensaje = (amount) => {
        
         mostrarMensaje(amount);
         sonido.play();
-        window.open("https://paypal.me/ArtDavRod", "_blank");
+        window.open(
+  `https://www.paypal.com/donate/?business=arturoferrari.endcc@gmail.com&amount=${amount}&currency_code=MXN`,
+  "paypal",
+  "width=600,height=700"
+);
         setDonationOpen(false);
       }}
       style={{
@@ -441,7 +446,11 @@ animateDonations(newTotal);
 mostrarMensaje(amount);
 sonido.play();
 
-window.open("https://www.paypal.com/donate");
+window.open(
+  `https://www.paypal.com/donate/?business=arturoferrari.endcc@gmail&amount=${amount}&currency_code=MXN`,
+  "paypal",
+  "width=600,height=700"
+);
       setDonationOpen(false);
       setCustomAmount("");
     }}
