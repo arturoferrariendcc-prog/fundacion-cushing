@@ -39,7 +39,7 @@ export default function CushingFoundation() {
     }
   }, [donationOpen]);
 
-
+  const [customAmount, setCustomAmount] = useState("");
   const [mensaje, setMensaje] = useState("");
   const [nombre, setNombre] = useState("");
   const [faqAbierto, setFaqAbierto] = useState(null);
@@ -447,7 +447,7 @@ const mostrarMensaje = (amount) => {
 
 <div style={{ display: "flex", gap: 10, justifyContent: "center", marginTop: 20 }}>
 
-  [20, 50, 100, 200].map((amount) => (
+  {[10, 20, 50, 100, 200].map((amount) => (
     <button
       key={amount}
       onClick={() => {
@@ -479,7 +479,25 @@ const mostrarMensaje = (amount) => {
 
 </div> {/* 👈 MUY IMPORTANTE: cerrar aquí */}
 
+{/* 👇 NUEVO BLOQUE SEPARADO */}
+<div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
 
+  <input
+    type="number"
+    placeholder="Ej. 150"
+    value={customAmount}
+    onChange={(e) => setCustomAmount(e.target.value)}
+    style={{
+      marginTop: 15,
+      padding: 12,
+      width: "80%",
+      borderRadius: 12,
+      border: "1px solid #1e293b",
+      background: "#0f172a",
+      color: "white",
+      textAlign: "center"
+    }}
+  />
 
   
 
