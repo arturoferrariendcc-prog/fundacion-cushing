@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Heart, PawPrint } from "lucide-react";
+import { PawPrint } from "lucide-react";
 
 
 const dogsData = [
