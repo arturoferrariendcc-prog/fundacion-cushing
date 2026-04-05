@@ -388,7 +388,7 @@ const mostrarMensaje = (amount) => {
        
         mostrarMensaje(amount);
         sonido.play();
-        window.open("https://www.paypal.com/donate");
+        window.open("https://paypal.me/ArtDavRod", "_blank");
         setDonationOpen(false);
       }}
       style={{
