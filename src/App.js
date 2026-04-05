@@ -358,7 +358,7 @@ const mostrarMensaje = (amount) => {
 
       {/* Donation */}
      
-      <motion.section
+     <motion.section
   id="donar"
   style={{ textAlign: "center", padding: 80 }}
   variants={fadeIn}
@@ -366,9 +366,26 @@ const mostrarMensaje = (amount) => {
   whileInView="visible"
   viewport={{ once: true }}
 >
-        <h3>Apoya nuestra causa</h3>
-    
-      </motion.section>
+  <h3>Apoya nuestra causa</h3>
+
+  <button
+    onClick={() => setDonationOpen(true)}
+    style={{
+      marginTop: 20,
+      padding: "15px 40px",
+      borderRadius: 999,
+      background: "linear-gradient(135deg,#3b82f6,#1e3a8a)",
+      border: "none",
+      color: "white",
+      cursor: "pointer",
+      fontSize: 16,
+      fontWeight: "bold"
+    }}
+  >
+    💙 Donar ahora
+  </button>
+
+</motion.section>
       <AnimatePresence>
   {donationOpen && (
     <motion.div
