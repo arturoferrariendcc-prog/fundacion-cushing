@@ -265,20 +265,7 @@ const mostrarMensaje = (amount) => {
 
       {/* Modal */}
 
-      <button
-  onClick={() => setDonationOpen(true)}
-  style={{
-    marginTop: 15,
-    padding: "10px 20px",
-    borderRadius: 10,
-    border: "none",
-    background: "#3b82f6",
-    color: "white",
-    cursor: "pointer"
-  }}
->
-  💙 Ayudar a {selectedDog.name}
-</button>
+    
       <AnimatePresence>
   {selectedDog && (
     <motion.div
