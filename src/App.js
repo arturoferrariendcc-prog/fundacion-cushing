@@ -437,41 +437,7 @@ const mostrarMensaje = (amount) => {
     }}
   />
 
-  <button
-    onClick={() => {
-      const amount = Number(customAmount);
-
-      if (!amount || amount <= 0) {
-        alert("Ingresa un monto válido");
-        return;
-      }
-
-     const newTotal = donations + amount;
-setDonations(newTotal);
-animateDonations(newTotal);
-mostrarMensaje(amount);
-sonido.play();
-
-window.open(
-  `https://www.paypal.com/donate/?business=arturoferrari.endcc@gmail&amount=${amount}&currency_code=MXN`,
-  "paypal",
-  "width=600,height=700"
-);
-      setDonationOpen(false);
-      setCustomAmount("");
-    }}
-    style={{
-      marginTop: 15,
-      padding: "10px 20px",
-      borderRadius: 10,
-      border: "none",
-      background: "#3b82f6",
-      color: "white",
-      cursor: "pointer"
-    }}
-  >
-    Donar monto personalizado 💙
-  </button>
+  
 
 </div>
 
